@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <div>
+      <ion-title>TODO LIST</ion-title>
+    </div>
+  </ion-toolbar>
+  <div id="container">
+   <strong style="color: #9510AC; font-style: italic; margin-left: 10%;">Agregar nueva tarea</strong>
+   <ion-list>
+    <ion-item class="custom-item">
+      <ion-label position="stacked" style="font-size: large;">Titulo:</ion-label>
+      <ion-input placeholder="Ingresa un titulo para su tarea" [(ngModel)]="newTask.title" ></ion-input>
+    </ion-item>
+    <ion-item class="custom-item">
+      <ion-label position="stacked" style="font-size: large;">Descripcion:</ion-label>
+      <ion-input placeholder="Ingresa una descripcion para su tarea"[(ngModel)]="newTask.description" ></ion-input>
+    </ion-item>
+    <ion-item class="custom-item">
+      <ion-label position="stacked" style="font-size: large;">Tipo:</ion-label>
+      <ion-select placeholder="Selecciona una opción" [(ngModel)]="newTask.type" >
+        <ion-select-option value="trabajo">Trabajo</ion-select-option>
+        <ion-select-option value="casa">Casa</ion-select-option>
+        <ion-select-option value="negocio">Negocios</ion-select-option>
+      </ion-select>
+    </ion-item>
+   </ion-list>
+   <div class="botones-contenedor" id="agregar-btn">
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #9510AC;" default-href="/home"></ion-back-button>
+      <strong style="font-weight: normal; color: #9510AC;">Regresar</strong>
+    </ion-buttons>
+    <ion-button class="boton" style="background: #9510AC;" color="transparent" class="boton" (click)="addTask()" >Agregar</ion-button>
+  </div>
+  </div>
+</ion-content>
